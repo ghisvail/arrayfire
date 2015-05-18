@@ -1,0 +1,3 @@
+usr/lib/*/*.so
+usr/include/*
+usr/share/ArrayFire/*.cmake usr/lib/cmake/ArrayFire
