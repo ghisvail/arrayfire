@@ -32,9 +32,10 @@ Description: High performance library for parallel computing (Library)
  A few lines of code in ArrayFire can replace dozens of lines of parallel
  computing code, saving you valuable time and lowering development costs.
  .
- This package provides the shared libraries.
+ This package provides the ArrayFire library compiled with CPU backend.
 
 Package: libarrayfire-dev
+Section: libdevel
 Architecture: any
 Depends: libarrayfire3 (= ${binary:Version}),
          ${misc:Depends},
@@ -51,7 +52,7 @@ Description: High performance library for parallel computing (Development)
  A few lines of code in ArrayFire can replace dozens of lines of parallel
  computing code, saving you valuable time and lowering development costs.
  .
- This package provides the development files.
+ This package provides the ArrayFire development files.
 
 Package: libarrayfire-doc
 Section: doc
@@ -68,4 +69,4 @@ Description: High performance library for parallel computing (Documentation)
  A few lines of code in ArrayFire can replace dozens of lines of parallel
  computing code, saving you valuable time and lowering development costs.
  .
- This package provides the common documentation.
+ This package provides the ArrayFire documentation.
