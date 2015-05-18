@@ -10,7 +10,7 @@ Build-Depends: cmake,
                libfftw3-dev,
                libfreeimage-dev,
                liblapacke-dev,
-               libopenblas-dev,
+               libopenblas-dev | libatlas-base-dev | libblas-dev,
                pkg-config
 Standards-Version: 3.9.6
 Homepage: http://arrayfire.com/
