@@ -57,8 +57,7 @@ Package: libarrayfire-dev
 Section: libdevel
 Architecture: any
 Depends: libarrayfire3 (= ${binary:Version}),
-         ${misc:Depends},
-         ${shlibs:Depends}
+         ${misc:Depends}
 Suggests: libarrayfire-doc
 Description: High performance library for parallel computing (Development)
  ArrayFire is a high performance software library for parallel computing
