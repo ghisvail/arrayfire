@@ -22,7 +22,7 @@ override_dh_auto_configure:
 	-DBUILD_CPU=ON \
 	-DBUILD_CUDA=OFF \
 	-DBUILD_OPENCL=OFF \
-	-DBUILD_DOCS=OFF \
+	-DBUILD_DOCS=ON \
 	-DWITH_COVERAGE=OFF
 
 override_dh_auto_clean:
