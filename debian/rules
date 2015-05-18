@@ -9,7 +9,7 @@ include /usr/share/dpkg/default.mk
 
 # main packaging script based on dh7 syntax
 %:
-	dh $@ --buildsystem=cmake --parallel
+	dh $@ --buildsystem=cmake --parallel --dbg-package=libarrayfire3-dbg
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
