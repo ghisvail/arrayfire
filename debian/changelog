@@ -1,0 +1,5 @@
+arrayfire (3.0~beta-1) UNRELEASED; urgency=low
+
+  * Initial release (Closes: #785569)
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Mon, 18 May 2015 10:41:05 +0100
