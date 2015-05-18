@@ -7,22 +7,13 @@
 DPKG_EXPORT_BUILDFLAGS = 1
 include /usr/share/dpkg/default.mk
 
-# see FEATURE AREAS in dpkg-buildflags(1)
-#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
-
-# see ENVIRONMENT in dpkg-buildflags(1)
-# package maintainers to append CFLAGS
-#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
-# package maintainers to append LDFLAGS
-#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
-
+# package build directory
+BUILDDIR = $(CURDIR)/debian/build
 
 # main packaging script based on dh7 syntax
 %:
-	dh $@ 
+	dh $@ --buildsystem=cmake --builddirectory=$(BUILDDIR) --parallel
 
-# debmake generated override targets
-# This is example for Cmake (See http://bugs.debian.org/641051 )
 override_dh_auto_configure:
 	dh_auto_configure -- \
 	-DBUILD_TEST=OFF \
@@ -33,3 +24,7 @@ override_dh_auto_configure:
 	-DBUILD_OPENCL=OFF \
 	-DBUILD_DOCS=ON \
 	-DWITH_COVERAGE=OFF
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf $(BUILDDIR)
