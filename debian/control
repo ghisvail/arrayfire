@@ -1,0 +1,17 @@
+Source: arrayfire
+Section: science
+Priority: optional
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Uploaders: Ghislain Antony Vaillant <ghisvail@gmail.com>
+Build-Depends: cmake,
+               debhelper (>= 9)
+Standards-Version: 3.9.6
+Homepage: http://arrayfire.com/
+Vcs-Git: git://anonscm.debian.org/debian-science/packages/h5py.git
+Vcs-Browser: https://anonscm.debian.org/cgit/debian-science/packages/h5py.git
+
+Package: arrayfire
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
