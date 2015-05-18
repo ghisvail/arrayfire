@@ -1,4 +1,4 @@
-arrayfire (3.0~beta-1) UNRELEASED; urgency=low
+arrayfire (3.0~beta-1) experimental; urgency=low
 
   * Initial release (Closes: #785569)
 
