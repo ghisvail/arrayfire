@@ -4,11 +4,17 @@ Priority: optional
 Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
 Uploaders: Ghislain Antony Vaillant <ghisvail@gmail.com>
 Build-Depends: cmake,
-               debhelper (>= 9)
+               debhelper (>= 9),
+               doxygen,
+               libboost-dev,
+               libfftw3-dev,
+               libfreeimage-dev,
+               liblapacke-dev,
+               libopenblas-dev
 Standards-Version: 3.9.6
 Homepage: http://arrayfire.com/
-Vcs-Git: git://anonscm.debian.org/debian-science/packages/h5py.git
-Vcs-Browser: https://anonscm.debian.org/cgit/debian-science/packages/h5py.git
+Vcs-Git: git://anonscm.debian.org/debian-science/packages/arrayfire.git
+Vcs-Browser: https://anonscm.debian.org/cgit/debian-science/packages/arrayfire.git
 
 Package: libarrayfire3
 Architecture: any
