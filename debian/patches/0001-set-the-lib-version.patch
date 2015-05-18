@@ -1,0 +1,90 @@
+From c3085150cb9facada2e7928dd8567ad9c7f770ef Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Gae=CC=88tan=20Lehmann?= <gaetan.lehmann@gmail.com>
+Date: Tue, 24 Mar 2015 17:29:45 +0100
+Subject: [PATCH] set the lib version
+
+---
+ CMakeModules/Version.cmake        | 6 ++++--
+ CMakeModules/version.h.in         | 2 ++
+ src/backend/cpu/CMakeLists.txt    | 4 ++++
+ src/backend/cuda/CMakeLists.txt   | 4 ++++
+ src/backend/opencl/CMakeLists.txt | 4 ++++
+ 5 files changed, 18 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeModules/Version.cmake b/CMakeModules/Version.cmake
+index 25379b0..a5aff0c 100644
+--- a/CMakeModules/Version.cmake
++++ b/CMakeModules/Version.cmake
+@@ -1,8 +1,10 @@
+ #
+ # Make a version file that includes the ArrayFire version and git revision
+ #
+-SET(AF_VERSION "3.0")
+-SET(AF_VERSION_MINOR ".beta")
++SET(AF_VERSION_MAJOR "3")
++SET(AF_VERSION_MINOR "0")
++SET(AF_VERSION_PATCH "beta")
++SET(AF_VERSION "${AF_VERSION_MAJOR}.${AF_VERSION_MINOR}.${AF_VERSION_PATCH}")
+ EXECUTE_PROCESS(
+     COMMAND git log -1 --format=%h
+     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+diff --git a/CMakeModules/version.h.in b/CMakeModules/version.h.in
+index f1241f5..1462394 100644
+--- a/CMakeModules/version.h.in
++++ b/CMakeModules/version.h.in
+@@ -1,5 +1,7 @@
+ #pragma once
+ 
+ #define AF_VERSION "@AF_VERSION@"
++#define AF_VERSION_MAJOR "@AF_VERSION_MAJOR@"
+ #define AF_VERSION_MINOR "@AF_VERSION_MINOR@"
++#define AF_VERSION_PATCH "@AF_VERSION_PATCH@"
+ #define AF_REVISION "@GIT_COMMIT_HASH@"
+diff --git a/src/backend/cpu/CMakeLists.txt b/src/backend/cpu/CMakeLists.txt
+index 3dd090b..3ee7ed8 100755
+--- a/src/backend/cpu/CMakeLists.txt
++++ b/src/backend/cpu/CMakeLists.txt
+@@ -79,6 +79,10 @@ ADD_LIBRARY(afcpu SHARED
+ 
+ TARGET_LINK_LIBRARIES(afcpu ${lib_deps} ${CBLAS_LIBRARIES} ${FFTW_LIBRARIES})
+ 
++SET_TARGET_PROPERTIES(afcpu PROPERTIES
++    VERSION "${AF_VERSION}"
++    SOVERSION "${AF_VERSION_MAJOR}")
++
+ INSTALL(TARGETS afcpu EXPORT CPU DESTINATION lib COMPONENT libraries)
+ 
+ export(TARGETS afcpu FILE ArrayFireCPU.cmake)
+diff --git a/src/backend/cuda/CMakeLists.txt b/src/backend/cuda/CMakeLists.txt
+index 5906c16..d709e65 100755
+--- a/src/backend/cuda/CMakeLists.txt
++++ b/src/backend/cuda/CMakeLists.txt
+@@ -165,6 +165,10 @@ ADD_DEPENDENCIES(afcuda ${ptx_targets})
+ 
+ TARGET_LINK_LIBRARIES(afcuda ${CUDA_CUBLAS_LIBRARIES} ${CUDA_LIBRARIES} ${lib_deps} ${CUDA_CUFFT_LIBRARIES} ${CUDA_NVVM_LIBRARIES} ${CUDA_CUDA_LIBRARY})
+ 
++SET_TARGET_PROPERTIES(afcuda PROPERTIES
++    VERSION "${AF_VERSION}"
++    SOVERSION "${AF_VERSION_MAJOR}")
++
+ INSTALL(TARGETS afcuda EXPORT CUDA DESTINATION lib COMPONENT libraries)
+ 
+ export(TARGETS afcuda FILE ArrayFireCUDA.cmake)
+diff --git a/src/backend/opencl/CMakeLists.txt b/src/backend/opencl/CMakeLists.txt
+index 537fb7e..68ddc62 100755
+--- a/src/backend/opencl/CMakeLists.txt
++++ b/src/backend/opencl/CMakeLists.txt
+@@ -168,6 +168,10 @@ ADD_DEPENDENCIES(afopencl ${cl_kernel_targets})
+ 
+ TARGET_LINK_LIBRARIES(afopencl ${OPENCL_LIBRARIES} ${lib_deps} ${CLBLAS_LIBRARIES} ${CLFFT_LIBRARIES} ${CMAKE_DL_LIBS} ${Boost_LIBRARIES})
+ 
++SET_TARGET_PROPERTIES(afopencl PROPERTIES
++    VERSION "${AF_VERSION}"
++    SOVERSION "${AF_VERSION_MAJOR}")
++
+ # locally built but not installed libraries (clBLAS and clFFT) must NOT appear in the
+ # link interface. The best option would be to use LINK_PRIVATE, but unfortunately
+ # it is not available for older cmake than 2.8.7, so they must be remove from
+-- 
+2.1.4
+
