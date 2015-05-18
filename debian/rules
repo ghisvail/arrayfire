@@ -25,7 +25,6 @@ include /usr/share/dpkg/default.mk
 # This is example for Cmake (See http://bugs.debian.org/641051 )
 override_dh_auto_configure:
 	dh_auto_configure -- \
-	-DCMAKE_LIBRARY_PATH=$(DEB_HOST_MULTIARCH) \
 	-DBUILD_TEST=OFF \
 	-DBUILD_EXAMPLES=OFF \
 	-DBUILD_GTEST=OFF \
@@ -34,7 +33,3 @@ override_dh_auto_configure:
 	-DBUILD_OPENCL=OFF \
 	-DBUILD_DOCS=ON \
 	-DWITH_COVERAGE=OFF
-
-
-
-
