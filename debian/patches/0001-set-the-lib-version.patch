@@ -1,7 +1,6 @@
-From c3085150cb9facada2e7928dd8567ad9c7f770ef Mon Sep 17 00:00:00 2001
-From: =?UTF-8?q?Gae=CC=88tan=20Lehmann?= <gaetan.lehmann@gmail.com>
-Date: Tue, 24 Mar 2015 17:29:45 +0100
+From: Gaetan Lehmann <gaetan.lehmann@gmail.com>
 Subject: [PATCH] set the lib version
+Origin: upstream, https://github.com/arrayfire/arrayfire/commit/c9260c82f806cecbaa4cad21a233c83872e83f74
 
 ---
  CMakeModules/Version.cmake        | 6 ++++--
