@@ -17,7 +17,7 @@ Homepage: http://arrayfire.com/
 Vcs-Git: git://anonscm.debian.org/debian-science/packages/arrayfire.git
 Vcs-Browser: https://anonscm.debian.org/cgit/debian-science/packages/arrayfire.git
 
-Package: libarrayfire-cpu-3
+Package: libarrayfire-cpu3
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends}
@@ -34,12 +34,12 @@ Description: High performance library for parallel computing (Library)
  .
  This package provides the ArrayFire library compiled with CPU backend.
 
-Package: libarrayfire-cpu-3-dbg
+Package: libarrayfire-cpu3-dbg
 Section: debug
 Priority: extra
 Architecture: any
 Depends: ${misc:Depends},
-         libarrayfire-cpu-3 (= ${binary:Version})
+         libarrayfire-cpu3 (= ${binary:Version})
 Description: High performance library for parallel computing (Debug)
  ArrayFire is a high performance software library for parallel computing
  with an easy-to-use API. Its array based function set makes parallel
@@ -58,7 +58,7 @@ Package: libarrayfire-cpu-dev
 Section: libdevel
 Architecture: any
 Depends: ${misc:Depends},
-         libarrayfire-cpu-3 (= ${binary:Version})
+         libarrayfire-cpu3 (= ${binary:Version})
 Suggests: libarrayfire-doc
 Description: High performance library for parallel computing (Development)
  ArrayFire is a high performance software library for parallel computing
