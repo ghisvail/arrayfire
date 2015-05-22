@@ -38,8 +38,8 @@ Package: libarrayfire-cpu-3-dbg
 Section: debug
 Priority: extra
 Architecture: any
-Depends: libarrayfire-cpu-3 (= ${binary:Version}), 
-         ${misc:Depends}
+Depends: ${misc:Depends},
+         libarrayfire-cpu-3 (= ${binary:Version})
 Description: High performance library for parallel computing (Debug)
  ArrayFire is a high performance software library for parallel computing
  with an easy-to-use API. Its array based function set makes parallel
@@ -51,13 +51,14 @@ Description: High performance library for parallel computing (Debug)
  A few lines of code in ArrayFire can replace dozens of lines of parallel
  computing code, saving you valuable time and lowering development costs.
  .
- This package provides the ArrayFire library debugging symbols.
+ This package provides the ArrayFire library debugging symbols for the CPU 
+ backend.
 
 Package: libarrayfire-cpu-dev
 Section: libdevel
 Architecture: any
-Depends: libarrayfire-cpu-3 (= ${binary:Version}),
-         ${misc:Depends}
+Depends: ${misc:Depends},
+         libarrayfire-cpu-3 (= ${binary:Version})
 Suggests: libarrayfire-doc
 Description: High performance library for parallel computing (Development)
  ArrayFire is a high performance software library for parallel computing
@@ -70,7 +71,7 @@ Description: High performance library for parallel computing (Development)
  A few lines of code in ArrayFire can replace dozens of lines of parallel
  computing code, saving you valuable time and lowering development costs.
  .
- This package provides the ArrayFire development files.
+ This package provides the ArrayFire development files for the CPU backend.
 
 Package: libarrayfire-doc
 Section: doc
