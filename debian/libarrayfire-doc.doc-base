@@ -2,7 +2,7 @@ Document: libarrayfire-doc
 Title: ArrayFire Documentation
 Author: ArrayFire Development Group
 Abstract: This is the reference documentation for the ArrayFire package.
-Section: Science/Distributed Computing
+Section: Science/Numerical Computation
 
 Format: HTML
 Index: /usr/share/doc/libarrayfire-doc/html/index.html
