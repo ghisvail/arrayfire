@@ -17,6 +17,25 @@ Homepage: http://arrayfire.com/
 Vcs-Git: git://anonscm.debian.org/debian-science/packages/arrayfire.git
 Vcs-Browser: https://anonscm.debian.org/cgit/debian-science/packages/arrayfire.git
 
+Package: libarrayfire-cpu-dev
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends},
+         libarrayfire-cpu3 (= ${binary:Version})
+Suggests: libarrayfire-doc
+Description: High performance library for parallel computing (Development)
+ ArrayFire is a high performance software library for parallel computing
+ with an easy-to-use API. Its array based function set makes parallel
+ programming simple.
+ .
+ ArrayFire's multiple backends (CUDA, OpenCL and native CPU) make it
+ platform independent and highly portable.
+ .
+ A few lines of code in ArrayFire can replace dozens of lines of parallel
+ computing code, saving you valuable time and lowering development costs.
+ .
+ This package provides the ArrayFire development files for the CPU backend.
+
 Package: libarrayfire-cpu3
 Architecture: any
 Depends: ${misc:Depends},
@@ -53,25 +72,6 @@ Description: High performance library for parallel computing (Debug)
  .
  This package provides the ArrayFire library debugging symbols for the CPU 
  backend.
-
-Package: libarrayfire-cpu-dev
-Section: libdevel
-Architecture: any
-Depends: ${misc:Depends},
-         libarrayfire-cpu3 (= ${binary:Version})
-Suggests: libarrayfire-doc
-Description: High performance library for parallel computing (Development)
- ArrayFire is a high performance software library for parallel computing
- with an easy-to-use API. Its array based function set makes parallel
- programming simple.
- .
- ArrayFire's multiple backends (CUDA, OpenCL and native CPU) make it
- platform independent and highly portable.
- .
- A few lines of code in ArrayFire can replace dozens of lines of parallel
- computing code, saving you valuable time and lowering development costs.
- .
- This package provides the ArrayFire development files for the CPU backend.
 
 Package: libarrayfire-doc
 Section: doc
