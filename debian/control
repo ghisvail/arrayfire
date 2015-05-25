@@ -38,8 +38,10 @@ Description: High performance library for parallel computing (Development)
 
 Package: libarrayfire-cpu3
 Architecture: any
+Multi-Arch: same
 Depends: ${misc:Depends},
          ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: High performance library for parallel computing (Library)
  ArrayFire is a high performance software library for parallel computing
  with an easy-to-use API. Its array based function set makes parallel
