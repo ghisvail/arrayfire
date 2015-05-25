@@ -11,9 +11,9 @@
  IF(${BUILD_CPU})
 --- arrayfire.orig/src/backend/cpu/CMakeLists.txt
 +++ arrayfire/src/backend/cpu/CMakeLists.txt
-@@ -79,7 +79,7 @@
- 
- TARGET_LINK_LIBRARIES(afcpu ${lib_deps} ${CBLAS_LIBRARIES} ${FFTW_LIBRARIES})
+@@ -83,7 +83,7 @@
+     VERSION "${AF_VERSION}"
+     SOVERSION "${AF_VERSION_MAJOR}")
  
 -INSTALL(TARGETS afcpu EXPORT CPU DESTINATION lib COMPONENT libraries)
 +INSTALL(TARGETS afcpu EXPORT CPU DESTINATION lib/${CMAKE_LIBRARY_ARCHITECTURE} COMPONENT libraries)
