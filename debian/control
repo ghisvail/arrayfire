@@ -81,6 +81,7 @@ Package: libarrayfire-doc
 Section: doc
 Architecture: all
 Depends: ${misc:Depends},
+         libjs-jquery,
          libjs-mathjax
 Description: High performance library for parallel computing (Documentation)
  ArrayFire is a high performance software library for parallel computing
