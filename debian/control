@@ -59,6 +59,7 @@ Package: libarrayfire-cpu3-dbg
 Section: debug
 Priority: extra
 Architecture: any
+Multi-Arch: same
 Depends: ${misc:Depends},
          libarrayfire-cpu3 (= ${binary:Version})
 Description: High performance library for parallel computing (Debug)
