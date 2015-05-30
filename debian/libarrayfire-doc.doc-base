@@ -5,5 +5,5 @@ Abstract: This is the reference documentation for the ArrayFire package.
 Section: Programming
 
 Format: HTML
-Index: /usr/share/doc/libarrayfire-doc/html/index.html
-Files: /usr/share/doc/libarrayfire-doc/html/*.html
+Index: /usr/share/doc/libarrayfire-doc/html/index.htm
+Files: /usr/share/doc/libarrayfire-doc/html/*.htm
