@@ -1,3 +1,4 @@
 0001-set-the-lib-version.patch
 0002-enable-multiarch.patch
 0003-fix-doxygen-settings.patch
+0004-disable-privacy-breach-doc.patch
