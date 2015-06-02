@@ -9,7 +9,6 @@ Build-Depends: cmake,
                libboost-dev,
                libfftw3-dev,
                libfreeimage-dev,
-               libglfw3-dev,
                liblapacke-dev,
                libopenblas-dev | libatlas-base-dev | libblas-dev,
                pkg-config
