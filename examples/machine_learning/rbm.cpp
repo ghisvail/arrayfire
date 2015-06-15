@@ -127,7 +127,7 @@ public:
             for (int j = 0; j < num_batches - 1; j++) {
 
                 int st = j * batch_size;
-                int en = std::min(num_samples - 1, st + batch_size);
+                int en = std::min(num_samples - 1, st + batch_size - 1);
                 int num = en - st + 1;
 
                 array v_pos = in(seq(st, en), span);
@@ -226,12 +226,12 @@ int main(int argc, char** argv)
 
     try {
 
-        af::deviceset(device);
+        af::setDevice(device);
         af::info();
         return rbm_demo(console, perc);
 
     } catch (af::exception &ae) {
-        std::cout << ae.what() << std::endl;
+        std::cerr << ae.what() << std::endl;
     }
 
 }

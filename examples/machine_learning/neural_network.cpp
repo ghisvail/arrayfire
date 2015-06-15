@@ -118,7 +118,7 @@ void ann::back_propagate(const vector<array> signal,
 
         // Input to current layer is output of previous
         out = signal[i];
-        err = matmul(weights[i], delta).T();
+        err = matmulTT(delta, weights[i]);
 
         // Remove the error of bias and propagate backward
         err = err(span, seq(1, out.dims(1)));
@@ -158,7 +158,7 @@ double ann::train(const array &input, const array &target,
         for (int j = 0; j < num_batches - 1; j++) {
 
             int st = j * batch_size;
-            int en = st + batch_size;
+            int en = st + batch_size - 1;
 
             array x = input(seq(st, en), span);
             array y = target(seq(st, en), span);
@@ -276,12 +276,12 @@ int main(int argc, char** argv)
 
     try {
 
-        af::deviceset(device);
+        af::setDevice(device);
         af::info();
         return ann_demo(console, perc);
 
     } catch (af::exception &ae) {
-        std::cout << ae.what() << std::endl;
+        std::cerr << ae.what() << std::endl;
     }
 
 }

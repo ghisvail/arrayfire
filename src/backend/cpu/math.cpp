@@ -6,6 +6,7 @@
  * The complete license agreement can be obtained at:
  * http://arrayfire.com/licenses/BSD-3-Clause
  ********************************************************/
+#include <defines.hpp>
 #include <math.hpp>
 
 namespace cpu
@@ -13,6 +14,9 @@ namespace cpu
     uint abs(uint val) { return val; }
     uchar abs(uchar val) { return val; }
     uintl abs(uintl val) { return val; }
+#if !(defined(OS_WIN) || (defined(ARCH_32) && defined(OS_LNX)))  // Not(Windows or Tegra)
+    size_t abs(size_t val) { return val; }
+#endif
 
     cfloat  scalar(float val)
     {
