@@ -1,0 +1,11 @@
+--- a/src/backend/cpu/CMakeLists.txt
++++ b/src/backend/cpu/CMakeLists.txt
+@@ -31,8 +31,6 @@
+ MESSAGE(STATUS "FFTW Found ? ${FFTW_FOUND}")
+ MESSAGE(STATUS "FFTW Library: ${FFTW_LIBRARIES}")
+ 
+-INCLUDE("${CMAKE_MODULE_PATH}/FindGLEWmx.cmake")
+-
+ IF(APPLE)
+     FIND_PACKAGE(LAPACK)
+ ELSE(APPLE) # Linux and Windows

@@ -1,2 +1,3 @@
 fix-doxygen-settings.patch
 disable-privacy-breach-doc.patch
+fix-unneeded-opengl-dep.patch
