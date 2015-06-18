@@ -25,4 +25,4 @@ override_dh_auto_configure:
 
 override_dh_auto_clean:
 	dh_auto_clean
-	[ ! -f "include/af/version.h" ] || $(RM) "include/af/version.h"
+	$(RM) -f include/af/version.h
