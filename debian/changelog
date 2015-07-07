@@ -1,3 +1,9 @@
+arrayfire (3.0.2-1) UNRELEASED; urgency=medium
+
+  * New upstream release. 
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Tue, 07 Jul 2015 12:05:32 +0100
+
 arrayfire (3.0.1-1) unstable; urgency=low
 
   * Initial release (Closes: #785569)
