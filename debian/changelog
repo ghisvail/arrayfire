@@ -1,7 +1,8 @@
 arrayfire (3.0.2-1) UNRELEASED; urgency=medium
 
   * New upstream release.
-  * Drop fix-unneeded-opengl-dep.patch, applied upstream. 
+  * Drop fix-unneeded-opengl-dep.patch, applied upstream.
+  * d/rules: install upstream changelog. 
 
  -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Tue, 07 Jul 2015 12:05:32 +0100
 
