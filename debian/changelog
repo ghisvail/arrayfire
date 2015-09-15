@@ -1,3 +1,9 @@
+arrayfire (3.1.1+dfsg1-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Tue, 15 Sep 2015 02:04:05 +0100
+
 arrayfire (3.0.2-1) unstable; urgency=medium
 
   * New upstream release.
