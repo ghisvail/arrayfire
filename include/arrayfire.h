@@ -138,6 +138,9 @@
      @defgroup connected_comps_mat Connected Components & Labeling
      regions
 
+     @defgroup image_mod_mat Wrapping and unwrapping image windows
+     wrap, unwrap, etc.
+
      @defgroup utility_mat Utility Functions
      loadImage, saveImage, gaussianKernel
    @}
@@ -200,7 +203,7 @@
    @defgroup external Interface Functions
    @{
 
-     CUDA/OpenCL specific functions
+     Backend specific functions
 
      @defgroup opencl_mat OpenCL specific functions
 
@@ -216,6 +219,14 @@
         upload data to `cl_mem` objects from separate threads, but the thread which
         instantiated ArrayFire must do the `cl_mem` to \ref af::array conversion.
 
+     @defgroup cuda_mat CUDA specific functions
+
+        \brief Accessing ArrayFire's stream, and native device id with other CUDA code.
+
+        If your software is using ArrayFire's CUDA backend, you can also write custom
+        kernels and do custom memory operations using native CUDA commands. The functions
+        contained in the \p afcu namespace provide methods to get the stream and native
+        device id that ArrayFire is using.
    @}
 @}
 
@@ -230,6 +241,7 @@
 \example vectorize.cpp
 \example black_scholes_options.cpp
 \example monte_carlo_options.cpp
+\example heston_model.cpp
 \example harris.cpp
 \example kmeans.cpp
 \example knn.cpp
@@ -247,6 +259,7 @@
 \example plot2d.cpp
 \example brain_segmentation.cpp
 \example image_demo.cpp
+\example image_editing.cpp
 \example morphing.cpp
 \example optical_flow.cpp
 \example pyramids.cpp
