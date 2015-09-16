@@ -1,8 +1,23 @@
 arrayfire (3.1.1+dfsg1-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Add d/README.source, explains rationales behind DFSG cleaning.
+  * Add d/README.Debian, explains packaging policy. 
+  * d/control:
+    - adjust format / content to debmake template,
+    - modify the existing binary package descriptions, in anticipation of the 
+      future introduction of the OpenCL backend packages. 
+  * Update d/copyright.
+  * d/patches:
+    - refresh doxygen patch,
+    - add upstream bugfix patch on assign, fixes memory corruption triggered 
+      whilst running the test suite.
+  * d/rules:
+    - use stricter hardening,
+    - enable test suite (only for 64-bit architecture due to a bug upstream),
+    - remove extra license file from assets.
 
- -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Tue, 15 Sep 2015 02:04:05 +0100
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Wed, 16 Sep 2015 11:19:11 +0100
 
 arrayfire (3.0.2-1) unstable; urgency=medium
 
