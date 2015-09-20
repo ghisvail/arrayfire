@@ -1,4 +1,4 @@
-arrayfire (3.1.1+dfsg1-1) UNRELEASED; urgency=medium
+arrayfire (3.1.1+dfsg1-1) unstable; urgency=medium
 
   * New upstream release.
   * Add d/README.source, explains rationales behind DFSG cleaning.
