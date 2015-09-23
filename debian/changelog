@@ -1,4 +1,4 @@
-arrayfire (3.1.1+dfsg1-2) UNRELEASED; urgency=medium
+arrayfire (3.1.1+dfsg1-2) unstable; urgency=medium
 
   * d/gbp.conf: use dfsg-clean branch as upstream branch.
   * Add upstream d/p/bugfix-cpuid-usage.patch, fixes FTBFS on several
