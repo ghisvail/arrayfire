@@ -1,0 +1,50 @@
+From e5b8788f7ff5ace55be0c2057c77868336d75780 Mon Sep 17 00:00:00 2001
+From: pradeep <pradeep@arrayfire.com>
+Date: Wed, 23 Sep 2015 11:39:57 -0400
+Subject: [PATCH] Restricts cpuid usage to only 64 & 32 bit architectures
+
+---
+ include/af/defines.h         | 4 ++--
+ src/backend/cpu/platform.cpp | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/include/af/defines.h b/include/af/defines.h
+index 8587ef3..b593cd6 100644
+--- a/include/af/defines.h
++++ b/include/af/defines.h
+@@ -50,8 +50,8 @@
+     typedef long long   dim_t;
+ #endif
+ 
+-#if defined(__arm__) || defined(_M_ARM) || defined(_M_ARMT) || defined(_ARM) || defined(_TARGET_ARCH_ARM) || defined(__TARGET_ARCH_THUMB) || defined(__thumb__)
+-#define ARM_ARCH
++#if defined(__x86_64__) || defined(_M_X64) || defined(__i386__) || defined(_M_IX86) || defined(_WIN64) || defined(__LP64__)
++#define USE_CPUID
+ #endif
+ 
+ #include <stdlib.h>
+diff --git a/src/backend/cpu/platform.cpp b/src/backend/cpu/platform.cpp
+index 2325cf5..7d77907 100644
+--- a/src/backend/cpu/platform.cpp
++++ b/src/backend/cpu/platform.cpp
+@@ -26,7 +26,7 @@ typedef unsigned __int32  uint32_t;
+ 
+ using namespace std;
+ 
+-#ifndef ARM_ARCH
++#ifdef USE_CPUID
+ 
+ #define MAX_INTEL_TOP_LVL 4
+ 
+@@ -76,7 +76,7 @@ class CPUInfo {
+         bool   mIsHTT;
+ };
+ 
+-#ifdef ARM_ARCH
++#ifndef USE_CPUID
+ 
+ CPUInfo::CPUInfo()
+     : mVendorId(""), mModelName(""), mNumSMT(0), mNumCores(0), mNumLogCpus(0), mIsHTT(false)
+-- 
+2.5.1
+
