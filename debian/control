@@ -7,6 +7,7 @@ Build-Depends: cmake,
                debhelper (>= 9),
                doxygen,
                libboost-dev,
+               libcompute-dev,
                libfftw3-dev,
                libfreeimage-dev,
                liblapacke-dev,
@@ -22,6 +23,7 @@ Section: libdevel
 Architecture: any
 Multi-Arch: same
 Depends: libarrayfire-cpu3 (= ${binary:Version}),
+         libarrayfire-dev,
          ${misc:Depends}
 Suggests: libarrayfire-doc
 Description: Development files for ArrayFire (CPU backend)
@@ -35,7 +37,7 @@ Description: Development files for ArrayFire (CPU backend)
  A few lines of code in ArrayFire can replace dozens of lines of parallel
  computing code, saving you valuable time and lowering development costs.
  .
- This package provides the development files for the CPU backend of the 
+ This package provides the development files for the CPU backend of the
  ArrayFire library.
 
 Package: libarrayfire-cpu3
@@ -76,8 +78,23 @@ Description: Debugging symbols for ArrayFire (CPU backend)
  A few lines of code in ArrayFire can replace dozens of lines of parallel
  computing code, saving you valuable time and lowering development costs.
  .
- This package provides the debugging symbols for the CPU backend of the 
+ This package provides the debugging symbols for the CPU backend of the
  ArrayFire library.
+
+Package: libarrayfire-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libarrayfire-cpu-dev | libarrayfire-opencl-dev,
+         ${misc:Depends},
+Suggests: libarrayfire-doc
+Description: Development files for ArrayFire
+ ArrayFire is a high performance software library for parallel computing
+ with an easy-to-use API. Its array based function set makes parallel
+ programming simple.
+ .
+ This package provides development files that are common to ArrayFire's
+ CPU and OpenCL backends.
 
 Package: libarrayfire-doc
 Section: doc
@@ -98,3 +115,33 @@ Description: Common documentation for ArrayFire
  computing code, saving you valuable time and lowering development costs.
  .
  This package provides the documentation for the ArrayFire library.
+
+Package: libarrayfire-opencl3
+Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: High performance library for parallel computing (OpenCL backend)
+ ArrayFire is a high performance software library for parallel computing
+ with an easy-to-use API. Its array based function set makes parallel
+ programming simple.
+ .
+ This package provides the OpenCL backend of the ArrayFire library.
+
+Package: libarrayfire-opencl-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libarrayfire-opencl (= ${binary:Version}),
+         opencl-dev,
+         ${misc:Depends}
+Suggests: libarrayfire-doc
+Description: Development files for ArrayFire (OpenCL backend)
+ ArrayFire is a high performance software library for parallel computing
+ with an easy-to-use API. Its array based function set makes parallel
+ programming simple.
+ .
+ This package provides the development files for the OpenCL backend of the
+ ArrayFire library.

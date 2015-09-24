@@ -1,0 +1,2 @@
+usr/lib/*/libafopencl.so
+usr/lib/*/cmake/ArrayFire/ArrayFireOpenCL*.cmake

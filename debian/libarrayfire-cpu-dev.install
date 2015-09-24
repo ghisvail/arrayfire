@@ -1,3 +1,2 @@
-usr/lib/*/*.so
-usr/include/*
-usr/lib/*/cmake/*
+usr/lib/*/libafcpu.so
+usr/lib/*/cmake/ArrayFire/ArrayFireCPU*.cmake
