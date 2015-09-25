@@ -1,0 +1,14 @@
+ArrayFire for Debian
+
+DFSG cleaning
+-------------
+
+Since version 3.1.0, ArrayFire has been shipping source code with patented 
+algorithms. Upstream has been kind enough to name the corresponding source 
+files with a *nonfree* suffix. As a result, running the following command:
+
+  find -name *nonfree* -type f -delete
+
+after merging a new upstream tag should be enough to perform DFSG cleaning.
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Thu, 17 Sep 2015 18:30:51 +0100

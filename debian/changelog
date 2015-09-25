@@ -1,0 +1,42 @@
+arrayfire (3.1.1+dfsg1-2) unstable; urgency=medium
+
+  * d/gbp.conf: use dfsg-clean branch as upstream branch.
+  * Add upstream d/p/bugfix-cpuid-usage.patch, fixes FTBFS on several
+    architectures.
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Wed, 23 Sep 2015 18:19:15 +0100
+
+arrayfire (3.1.1+dfsg1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Add d/README.source, explains rationales behind DFSG cleaning.
+  * Add d/README.Debian, explains packaging policy. 
+  * d/control:
+    - adjust format / content to debmake template,
+    - modify the existing binary package descriptions, in anticipation of the 
+      future introduction of the OpenCL backend packages. 
+  * Update d/copyright.
+  * d/patches:
+    - refresh doxygen patch,
+    - add upstream bugfix patch on assign, fixes memory corruption triggered 
+      whilst running the test suite.
+  * d/rules:
+    - use stricter hardening,
+    - enable test suite (only for 64-bit architecture due to a bug upstream),
+    - remove extra license file from assets.
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Wed, 16 Sep 2015 11:19:11 +0100
+
+arrayfire (3.0.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Drop fix-unneeded-opengl-dep.patch, applied upstream.
+  * d/rules: install upstream changelog. 
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Tue, 07 Jul 2015 12:05:32 +0100
+
+arrayfire (3.0.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #785569)
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Mon, 18 May 2015 10:41:05 +0100

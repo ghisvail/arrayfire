@@ -1,0 +1,4 @@
+fix-doxygen-settings.patch
+disable-privacy-breach-doc.patch
+bugfix-in-assign.patch
+bugfix-cpuid-usage.patch

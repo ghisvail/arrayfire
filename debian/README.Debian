@@ -1,0 +1,19 @@
+ArrayFire for Debian
+
+This Debian source package was generated with dh-make and subsequently edited 
+to follow the Debian science policy revision 1.2 [1].
+
+The packaging repository uses the upstream git repository and its layout 
+follows the recommended guidelines in DEP-14 [2]. Specific information 
+regarding the packaging repository layout can be found in the accompanying 
+debian/gbp.conf file.
+
+IMPORTANT: the upstream repository uses git submodules to provide additional 
+static resources such as documentation assets and test data. Please use the 
+--git-submodules option from `gbp buildpackage` in order to include these in 
+the source tarball.
+
+[1] http://debian-science.alioth.debian.org/debian-science-policy.html
+[2] http://dep.debian.net/deps/dep14/
+
+ -- Ghislain Antony Vaillant <ghisvail@gmail.com>  Thu, 17 Sep 2015 18:30:51 +0100

@@ -1,0 +1,16 @@
+Description: fix Doxygen documentation settings for Debian
+Author: Ghislain Antony Vaillant <ghisvail@gmail.com>
+Forwarded: not-needed
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/docs/doxygen.mk
++++ b/docs/doxygen.mk
+@@ -1464,7 +1464,7 @@
+ # The default value is: http://cdn.mathjax.org/mathjax/latest.
+ # This tag requires that the tag USE_MATHJAX is set to YES.
+ 
+-MATHJAX_RELPATH        = http://cdn.mathjax.org/mathjax/latest
++MATHJAX_RELPATH        = /usr/share/javascript/mathjax
+ 
+ # The MATHJAX_EXTENSIONS tag can be used to specify one or more MathJax
+ # extension names that should be enabled during MathJax rendering. For example
