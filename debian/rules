@@ -40,7 +40,7 @@ override_dh_auto_configure:
 override_dh_auto_install:
 	dh_auto_install
 	# Remove extra license file from arrayfire/assets.
-	rm $(DESTDIR)/usr/share/ArrayFire/doc/LICENSE
+	rm -f $(DESTDIR)/usr/share/ArrayFire/doc/LICENSE
 
 override_dh_auto_clean:
 	dh_auto_clean
