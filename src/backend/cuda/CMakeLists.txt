@@ -155,7 +155,7 @@ ELSE(CUDA_cusolver_LIBRARY)
         ## Try to use CPU side lapack
         IF(APPLE)
             FIND_PACKAGE(LAPACKE QUIET) # For finding MKL
-            IF(NOT LAPACK_FOUND)
+            IF(NOT LAPACKE_FOUND)
                 # UNSET THE VARIABLES FROM LAPACKE
                 UNSET(LAPACKE_LIB CACHE)
                 UNSET(LAPACK_LIB CACHE)
@@ -167,9 +167,9 @@ ELSE(CUDA_cusolver_LIBRARY)
             FIND_PACKAGE(LAPACKE)
         ENDIF(APPLE)
 
-        IF(NOT LAPACK_FOUND)
+        IF(NOT LAPACKE_FOUND)
             MESSAGE(STATUS "CUDA Version ${CUDA_VERSION_STRING} does not contain cusolver library. Linear Algebra will not be available.")
-        ELSE(NOT LAPACK_FOUND)
+        ELSE(NOT LAPACKE_FOUND)
             MESSAGE(STATUS "CUDA Version ${CUDA_VERSION_STRING} does not contain cusolver library. But CPU LAPACK libraries are available. Will fallback to using host side code.")
             ADD_DEFINITIONS(-DWITH_CPU_LINEAR_ALGEBRA)
             IF(USE_CUDA_MKL) # Manual MKL Setup
@@ -198,7 +198,7 @@ INCLUDE_DIRECTORIES(
     )
 
 IF(CUDA_LAPACK_CPU_FALLBACK)
-  INCLUDE_DIRECTORIES(${LAPACK_INCLUDE_DIR})
+  INCLUDE_DIRECTORIES(${LAPACKE_INCLUDE_DIRS})
 ENDIF()
 
 FILE(GLOB cuda_headers
@@ -495,7 +495,7 @@ ENDIF()
 IF(CUDA_cusolver_LIBRARY)
     TARGET_LINK_LIBRARIES(afcuda PRIVATE ${CUDA_cusolver_LIBRARY})
 ELSEIF(CUDA_LAPACK_CPU_FALLBACK)
-    TARGET_LINK_LIBRARIES(afcuda PRIVATE ${LAPACK_LIBRARIES})
+    TARGET_LINK_LIBRARIES(afcuda PRIVATE ${LAPACKE_LIBRARIES})
 ENDIF()
 
 SET_TARGET_PROPERTIES(afcuda PROPERTIES

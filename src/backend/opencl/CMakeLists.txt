@@ -16,7 +16,7 @@ ENDIF()
 
 IF(APPLE)
     FIND_PACKAGE(LAPACKE QUIET) # For finding MKL
-    IF(NOT LAPACK_FOUND)
+    IF(NOT LAPACKE_FOUND)
         # UNSET THE VARIABLES FROM LAPACKE
         UNSET(LAPACKE_LIB CACHE)
         UNSET(LAPACK_LIB CACHE)
@@ -28,9 +28,9 @@ ELSE(APPLE) # Linux and Windows
     FIND_PACKAGE(LAPACKE)
 ENDIF(APPLE)
 
-IF(NOT LAPACK_FOUND)
+IF(NOT LAPACKE_FOUND)
     MESSAGE(WARNING "LAPACK not found. Functionality will be disabled")
-ELSE(NOT LAPACK_FOUND)
+ELSE(NOT LAPACKE_FOUND)
   ADD_DEFINITIONS(-DWITH_OPENCL_LINEAR_ALGEBRA)
 
   IF(NOT USE_OPENCL_MKL)
@@ -109,8 +109,8 @@ INCLUDE_DIRECTORIES(
     ${BoostCompute_INCLUDE_DIRS}
     ${CBLAS_INCLUDE_DIR}
     )
-IF(LAPACK_FOUND)
-    INCLUDE_DIRECTORIES(${LAPACK_INCLUDE_DIR})
+IF(LAPACKE_FOUND)
+    INCLUDE_DIRECTORIES(${LAPACKE_INCLUDE_DIRS})
 ENDIF()
 
 FILE(GLOB opencl_headers
@@ -166,7 +166,7 @@ source_group(backend\\opencl\\kernel\\convolve\\Sources FILES ${conv_ker_sources
 source_group(backend\\opencl\\cpu\\Headers FILES ${cpu_headers})
 source_group(backend\\opencl\\cpu\\Sources FILES ${cpu_sources})
 
-IF(LAPACK_FOUND)
+IF(LAPACKE_FOUND)
     FILE(GLOB magma_sources
         "magma/*.cpp")
 
@@ -330,9 +330,9 @@ IF(FORGE_FOUND AND NOT USE_SYSTEM_FORGE)
     ADD_DEPENDENCIES(afopencl forge)
 ENDIF()
 
-IF(LAPACK_FOUND)
+IF(LAPACKE_FOUND)
   TARGET_LINK_LIBRARIES(afopencl
-    PRIVATE ${LAPACK_LIBRARIES}
+    PRIVATE ${LAPACKE_LIBRARIES}
     PRIVATE ${CBLAS_LIBRARIES})
 ENDIF()
 
